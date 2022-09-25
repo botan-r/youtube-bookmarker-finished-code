@@ -1,6 +1,8 @@
 (() => {
   let youtubeLeftControls, youtubePlayer;
-  let currentVideo = "";
+  const queryParameters = document.URL.split("?")[1];
+  const urlParameters = new URLSearchParams(queryParameters);
+  let currentVideo = urlParameters.get("v");
   let currentVideoBookmarks = [];
 
   const fetchBookmarks = () => {
